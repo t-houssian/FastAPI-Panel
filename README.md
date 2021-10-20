@@ -8,7 +8,7 @@ A minimum reproducible repository for embedding panel in FastAPI
 3. Set the evniroment variable BOKEH_ALLOW_WS_ORIGIN=127.0.0.1:8000 (or whatever your local host is)
   If using a conda environment then use `conda env config vars set BOKEH_ALLOW_WS_ORIGIN=127.0.0.1:8000`
 4. Run the app using `uvicorn main:app --reload`
-5. Open the app at `http://127.0.0.1:8000/app`
+5. Open the app at `http://127.0.0.1:8000/`
 
 That's it! You can change, modify, or add to the code in any way you'd like.
 
@@ -30,7 +30,7 @@ def createApp2(doc):
 5. Add your new app to the dictionary in bk_worker() Server
 6. Add a new async function to rout your new app (The bottom of main.py should look something like this now):
 ```
-@app.get("/app")
+@app.get("/")
 async def bkapp_page(request: Request):
     script = server_document('http://127.0.0.1:5000/app')
     return templates.TemplateResponse("base.html", {"request": request, "script": script})
