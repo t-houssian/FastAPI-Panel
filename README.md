@@ -12,9 +12,10 @@ A minimum reproducible repository for embedding panel in FastAPI
 
 That's it! You can change, modify, or add to the code in any way you'd like.
 
-## For Multiple Apps
-1. Create a new file in your panelApps directory (ex. app2.py)
-2. Create another pn_app file that (ex. pn_app2.py) That might look something like this:
+## Multiple Apps
+This is just a basic single app example. To run multiple apps you will need to do the following:
+1. Create a new file in your panelApps directory (ex. `app2.py`) and add your new app code.
+2. Create another pn_app file in your panelApps directory (ex. `pn_app2.py`) That might look something like this:
 ```
 import panel as pn
 
@@ -28,7 +29,10 @@ def createApp2(doc):
 3. Create a new html template (ex. app2.html) with the same contents as base.html
 4. Import your new app in main.py `from panelApps.pn_app import createApp2`
 5. Add your new app to the dictionary in bk_worker() Server
-6. Add a new async function to rout your new app (The bottom of main.py should look something like this now):
+```
+{'/app': createApp, '/app2': createApp2}
+```
+7. Add a new async function to rout your new app (The bottom of `main.py` should look something like this now):
 ```
 @app.get("/")
 async def bkapp_page(request: Request):
