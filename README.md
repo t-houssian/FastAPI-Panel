@@ -40,7 +40,7 @@ async def bkapp_page(request: Request):
     return templates.TemplateResponse("base.html", {"request": request, "script": script})
     
 @app.get("/app2")
-async def bkapp_page(request: Request):
+async def bkapp_page2(request: Request):
     script = server_document('http://127.0.0.1:5000/app2')
     return templates.TemplateResponse("app2.html", {"request": request, "script": script})
 
