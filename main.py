@@ -1,5 +1,5 @@
 from bokeh.embed import server_document
-from bokeh.server.server import Server
+from panel.io.server import Server
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.cors import CORSMiddleware
