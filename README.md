@@ -1,6 +1,10 @@
 # FastAPI-Panel
 A minimum reproducible repository for embedding panel in FastAPI
 
+Follow either [This Tutorial](https://hackmd.io/ileoi_9YT6eEm27hbxTzmA?view)
+or
+These steps below ↓↓↓
+
 1. Clone the repository (git clone https://github.com/t-houssian/FastAPI-Panel.git)
 2. Install the needed libraries
   `pip install "fastapi[all]"`
