@@ -2,7 +2,6 @@ import panel as pn
 
 from .app1 import SineWave
 
-def createApp(doc):
+def createApp():
     sw = SineWave()
-    row = pn.Row(sw.param, sw.plot)
-    return row.server_doc(doc)
+    return pn.Row(sw.param, sw.plot).servable()
